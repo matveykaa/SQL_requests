@@ -10,6 +10,7 @@ def add_info(id:int, name: str):
         print('\n- - ID exists - -')
     else:
         cursor.execute('''INSERT INTO table16_2(ID, name) VALUES (?, ?)''', (id, name))
+        conn.commit()
 
 
 conn = sqlite3.connect('name16_2.db')

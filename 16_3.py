@@ -6,6 +6,7 @@ import sqlite3
 
 def update_info(id: int, name: str):
     cursor.execute('''UPDATE table16_3 SET name = ? WHERE ID = ?''', (name, id))
+    conn.commit()
 
 def add_info(id: int, name: str):
     cursor.execute('''SELECT count(*) FROM table16_3 WHERE ID=?''', (id,))
@@ -13,6 +14,7 @@ def add_info(id: int, name: str):
        update_info(id, name)
     else:
         cursor.execute('''INSERT INTO table16_3(ID, name) VALUES (?, ?)''', (id, name))
+        conn.commit()
 
 
 conn = sqlite3.connect('name16_3.db')
