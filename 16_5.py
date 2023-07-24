@@ -3,6 +3,11 @@
 
 import sqlite3
 
+def print_all():
+    cursor.execute('''SELECT * FROM table16_5''')
+    k = cursor.fetchall()
+    print(k)
+
 conn = sqlite3.connect('name16_5.db')
 cursor = conn.cursor()
 
@@ -12,6 +17,4 @@ input_data = input('Введите text - ')
 cursor.execute('''INSERT INTO table16_5(name) VALUES (?)''', (input_data,))
 conn.commit()
 
-cursor.execute('''SELECT * FROM table16_5''')
-k = cursor.fetchall()
-print(k)
+print_all()
