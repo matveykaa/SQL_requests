@@ -16,5 +16,4 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS table16_5(ID INTEGER PRIMARY KEY AU
 input_data = input('Введите text - ')
 cursor.execute('''INSERT INTO table16_5(name) VALUES (?)''', (input_data,))
 conn.commit()
-
 print_all()
